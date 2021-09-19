@@ -1,0 +1,57 @@
+﻿@model MvcCRUD.Models.Personel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Personel Detay</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Ad")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Soyad")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Pozisyon")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelPozisyon)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Telefon")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelTelefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Mail")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelMail)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.PersonelID }) |
+    @Html.ActionLink("Geri Dön", "Index")
+</p>

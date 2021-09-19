@@ -1,0 +1,60 @@
+﻿@model IEnumerable<MvcCRUD.Models.Personel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Personle Listesi</h2>
+
+<p>
+    @Html.ActionLink("Yeni Personel Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Personel Ad")
+       
+        </th>
+        <th>
+                 @Html.DisplayName("Personel Soyad")
+        </th>
+        <th>
+     
+            @Html.DisplayName("Personel Pozisyon")
+        </th>
+        <th>
+            @Html.DisplayName("Personel Telefon Numarası")
+        </th>
+        <th>
+            @Html.DisplayName("Personel Mail")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonelAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonelSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonelPozisyon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonelTelefon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonelMail)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PersonelID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PersonelID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PersonelID })
+        </td>
+    </tr>
+}
+
+</table>
